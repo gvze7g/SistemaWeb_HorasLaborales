@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seguimiento de Vehículo</title>
+  <link rel="stylesheet" href="css/seguimiento.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <div class="contenedor-aplicacion">
+    <main class="contenido-principal-seguimiento">
+
+      <header class="cabecera-aplicacion">
+        <a href="index.html" class="boton-volver">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </header>
+
+      <div class="tarjeta-info-vehiculo">
+        <div class="encabezado-tarjeta">
+          <span class="numero-registro">Registro número: <span id="numeroRegistro">N/A</span></span>
+        </div>
+        <div class="contenedor-detalles-vehiculo">
+          <div class="envoltorio-imagen-vehiculo">
+            <img src="imgs/audi.jpg" alt="Imagen del Vehículo" id="imagenVehiculo" />
+          </div>
+          <div class="texto-info-vehiculo">
+            <h2 id="infoModelo">Cargando...</h2>
+            <p class="estado-ajuste" id="estadoAjuste">
+              Estado del ajuste: Cargando...
+            </p>
+            <p>Placa: <span id="infoPlaca">Cargando...</span></p>
+            <p>Estudiante Asignado: <span id="estudianteAsignado">Cargando...</span></p>
+            <p>Módulo: <span id="moduloAsignado">Cargando...</span></p>
+            <div class="info-contacto">
+              <span id="nombreContacto">Cargando...</span>
+              <a href="#" class="boton-contacto">Contactar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="seccion-progreso">
+          <div class="contenedor-barra-progreso">
+            <div class="barra-progreso" id="barraProgreso" style="width: 78%"></div>
+            <span id="porcentajeProgreso">78%</span>
+          </div>
+          <div class="info-tiempo-progreso">
+            <span id="tiempoRestante">Cargando...</span>
+            <span id="tiempoTotal">Cargando...</span>
+          </div>
+        </div>
+
+        <div class="cuadricula-tareas-reparacion" id="cuadriculaTareasReparacion">
+        </div>
+
+      </div>
+
+      <div class="seccion-actualizaciones">
+        <h2>Actualizaciones Recientes</h2>
+        <ul id="listaActualizaciones">
+          <li>Cargando actualizaciones...</li>
+        </ul>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/seguimiento.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+/* Hamburger Button Styles */
+.hamburger-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--acento-rojo), var(--acento-rojo-oscuro));
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.hamburger-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.hamburger-btn:active {
+    transform: scale(0.95);
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.hamburger-btn.hamburger-active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-btn.hamburger-active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.hamburger-btn.hamburger-active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Overlay Styles */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: none;
+}
+
+.sidebar-overlay.overlay-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Sidebar Styles */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 280px;
+        z-index: 999;
+        box-shadow: none;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sidebar.sidebar-open {
+        transform: translateX(0);
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .hamburger-btn {
+        display: flex;
+    }
+
+    .sidebar-overlay {
+        display: block;
+    }
+
+    /* Adjust main content for mobile */
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+
+    /* Enhanced sidebar logo for mobile */
+    .sidebar-logo {
+        height: 90px;
+        padding: var(--espaciado-m);
+    }
+
+    .sidebar-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Mobile navigation adjustments */
+    .navegacion-sidebar {
+        padding-top: var(--espaciado-m);
+    }
+
+    .enlace-sidebar {
+        height: 60px;
+        justify-content: flex-start;
+        padding-left: var(--espaciado-l);
+        gap: var(--espaciado-m);
+    }
+
+    .enlace-sidebar i {
+        font-size: 1.5rem;
+        width: 24px;
+        text-align: center;
+    }
+
+    .enlace-sidebar .tooltip {
+        display: none;
+    }
+
+    /* Show text labels in mobile */
+    .enlace-sidebar::after {
+        content: attr(title);
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: inherit;
+        white-space: nowrap;
+    }
+
+    .enlace-sidebar[title="Inicio"]::after {
+        content: "Inicio";
+    }
+
+    .enlace-sidebar[title="Vehículos"]::after {
+        content: "Vehículos";
+    }
+
+    .enlace-sidebar[title="Reportes"]::after {
+        content: "Reportes";
+    }
+
+    .enlace-sidebar[title="Administración"]::after {
+        content: "Administración";
+    }
+
+    .enlace-sidebar[title="Mi perfil"]::after {
+        content: "Mi Perfil";
+    }
+
+    .enlace-sidebar[title="Cerrar Sesión"]::after {
+        content: "Cerrar Sesión";
+    }
+
+    /* Mobile dropdown adjustments */
+    .dropdown-content-sidebar {
+        position: static;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: none;
+        border: none;
+        border-radius: 0;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+        margin-top: var(--espaciado-s);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .dropdown-sidebar:hover .dropdown-content-sidebar,
+    .dropdown-sidebar.dropdown-active .dropdown-content-sidebar {
+        display: block;
+        max-height: 300px;
+    }
+
+    .dropdown-content-sidebar a {
+        padding: 12px var(--espaciado-xl);
+        font-size: 0.85rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown-content-sidebar a:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Tablet specific adjustments */
+@media (max-width: 768px) and (min-width: 481px) {
+    .hamburger-btn {
+        width: 55px;
+        height: 55px;
+        top: 15px;
+        left: 15px;
+    }
+
+    .sidebar {
+        width: 300px;
+    }
+}
+
+/* Phone specific adjustments */
+@media (max-width: 480px) {
+    .hamburger-btn {
+        width: 45px;
+        height: 45px;
+        top: 15px;
+        left: 15px;
+        padding: 8px;
+    }
+
+    .hamburger-line {
+        height: 2px;
+    }
+
+    .sidebar {
+        width: 280px;
+    }
+
+    .sidebar-logo {
+        height: 80px;
+    }
+
+    .sidebar-logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .enlace-sidebar {
+        height: 55px;
+        padding-left: var(--espaciado-m);
+    }
+
+    .enlace-sidebar i {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animation classes for enhanced UX */
+.sidebar-slide-in {
+    animation: slideInLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-slide-out {
+    animation: slideOutLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Focus management for accessibility */
+.sidebar.sidebar-open .enlace-sidebar:focus {
+    outline: 2px solid var(--acento-azul);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .hamburger-btn {
+        border: 2px solid white;
+    }
+    
+    .sidebar-overlay {
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: none;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .hamburger-btn,
+    .hamburger-line,
+    .sidebar,
+    .sidebar-overlay {
+        transition: none;
+    }
+    
+    .sidebar-slide-in,
+    .sidebar-slide-out {
+        animation: none;
+    }
+}

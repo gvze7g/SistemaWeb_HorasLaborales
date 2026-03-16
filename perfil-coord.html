@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="imgs/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="css/perfil-coord.css">
+    <link rel="stylesheet" href="css/menu-hamburguesa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="imgs/logo.png" alt="Logo ITR" class="sidebar-logo-img">
+        </div>
+        <nav class="navegacion-sidebar">
+            <ul>
+                <li>
+                    <a href="coordi-index.html" class="enlace-sidebar" title="Inicio">
+                        <i class="fas fa-home"></i>
+                        <span class="tooltip">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard-vehiculos.html" class="enlace-sidebar" title="Vehículos">
+                        <i class="fas fa-car"></i>
+                        <span class="tooltip">Vehículos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reportes.html" class="enlace-sidebar" title="Reportes">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="tooltip">Reportes</span>
+                    </a>
+                </li>
+                <li class="dropdown-sidebar">
+                    <a href="#" class="enlace-sidebar dropdown-toggle" title="Administración">
+                        <i class="fas fa-cog"></i>
+                        <span class="tooltip">Administración</span>
+                    </a>
+                    <div class="dropdown-content-sidebar">
+                        <a href="admin-users.html"><i class="fas fa-users"></i> Gestionar Docentes</a>
+                        <a href="admin-modules.html"><i class="fas fa-puzzle-piece"></i> Gestionar Módulos</a>
+                        <a href="admin-students.html"><i class="fas fa-graduation-cap"></i> Gestionar Estudiantes</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="perfil-coord.html" class="enlace-sidebar activo" title="Mi perfil">
+                        <i class="fas fa-user"></i>
+                        <span class="tooltip">Mi Perfil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="enlace-sidebar" title="Cerrar Sesión">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="tooltip">Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="contenedor-perfil">
+            <section class="tarjeta-perfil">
+                <div class="cabecera-perfil">
+                    <div class="avatar-container">
+                        <img src="" alt="Avatar del usuario" class="avatar-grande" id="avatarUsuario">
+                        <div class="avatar-badge">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                    </div>
+                    <div class="info-principal">
+                        <h1 id="nombreUsuario">...</h1>
+                        <div class="status-badge">
+                            <i class="fas fa-circle status-indicator"></i>
+                            <span>Activo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="detalles-perfil">
+                    <div class="info-grid">
+                        <div class="grupo-info">
+                            <label><i class="fas fa-user"></i> Nombre Completo:</label>
+                            <p id="nombreCompletoUsuario">...</p>
+                        </div>
+                        <div class="grupo-info">
+                            <label><i class="fas fa-id-badge"></i> Rol:</label>
+                            <p id="rolUsuario">...</p>
+                        </div>
+                        <div class="grupo-info">
+                            <label><i class="fas fa-envelope"></i> Email:</label>
+                            <p id="emailUsuario">...</p>
+                        </div>
+                        <div class="grupo-info">
+                            <label><i class="fas fa-phone"></i> Teléfono:</label>
+                            <p id="telefonoUsuario">...</p>
+                        </div>
+                        <div class="grupo-info grupo-info-span">
+                            <label><i class="fas fa-calendar-alt"></i> Año impartido:</label>
+                            <p id="anioImpartidoUsuario">...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tarjeta-cambio-contrasena">
+                <div class="form-header">
+                    <i class="fas fa-lock"></i>
+                    <h2>Cambiar Contraseña</h2>
+                </div>
+                <form id="formularioCambioContrasena">
+                    <div class="grupo-formulario">
+                        <label for="contrasenaActual">
+                            <i class="fas fa-key"></i>
+                            Contraseña Actual
+                        </label>
+                        <div class="input-container">
+                            <input type="password" id="contrasenaActual" placeholder="Ingresa tu contraseña actual" required>
+                            <button type="button" class="toggle-password" data-target="contrasenaActual">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="nuevaContrasena">
+                            <i class="fas fa-lock"></i>
+                            Nueva Contraseña
+                        </label>
+                        <div class="input-container">
+                            <input type="password" id="nuevaContrasena" placeholder="Ingresa tu nueva contraseña" required>
+                            <button type="button" class="toggle-password" data-target="nuevaContrasena">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar"></div>
+                            <span class="strength-text">Fuerza de la contraseña</span>
+                        </div>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="confirmarNuevaContrasena">
+                            <i class="fas fa-check-double"></i>
+                            Confirmar Nueva Contraseña
+                        </label>
+                        <div class="input-container">
+                            <input type="password" id="confirmarNuevaContrasena" placeholder="Confirma tu nueva contraseña" required>
+                            <button type="button" class="toggle-password" data-target="confirmarNuevaContrasena">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="submit" class="boton-actualizar-contrasena">
+                        <i class="fas fa-sync-alt"></i>
+                        Actualizar Contraseña
+                    </button>
+                    <div id="mensajeContrasena" class="mensaje-alerta"></div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="js/perfil-coord.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SGMA</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/coordi-index.css" />
+    <link rel="stylesheet" href="css/menu-hamburguesa.css">
+</head>
+
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="imgs/logo.png" alt="Logo ITR" class="sidebar-logo-img">
+        </div>
+        <nav class="navegacion-sidebar">
+            <ul>
+                <li>
+                    <a href="coordi-index.html" class="enlace-sidebar activo" title="Inicio">
+                        <i class="fas fa-home"></i>
+                        <span class="tooltip">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard-vehiculos.html" class="enlace-sidebar" title="Vehículos">
+                        <i class="fas fa-car"></i>
+                        <span class="tooltip">Vehículos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reportes.html" class="enlace-sidebar" title="Reportes">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="tooltip">Reportes</span>
+                    </a>
+                </li>
+                <li class="dropdown-sidebar">
+                    <a href="#" class="enlace-sidebar dropdown-toggle" title="Administración">
+                        <i class="fas fa-cog"></i>
+                        <span class="tooltip">Administración</span>
+                    </a>
+                    <div class="dropdown-content-sidebar">
+                        <a href="admin-users.html"><i class="fas fa-users"></i> Gestionar Docentes</a>
+                        <a href="admin-modules.html"><i class="fas fa-puzzle-piece"></i> Gestionar Módulos</a>
+                        <a href="admin-students.html"><i class="fas fa-graduation-cap"></i> Gestionar Estudiantes</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="perfil-coord.html" class="enlace-sidebar" title="Mi perfil">
+                        <i class="fas fa-user"></i>
+                        <span class="tooltip">Mi Perfil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="enlace-sidebar" title="Cerrar Sesión">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="tooltip">Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="contenido-principal-coordi">
+        <div class="info-usuario-header" id="info-usuario-header">
+            <div class="avatar-usuario-header">
+                <img src="imgs/defaul-user.webp" alt="Avatar" id="avatar-usuario">
+            </div>
+            <div class="datos-usuario-header">
+                <div class="linea-bienvenido">
+                    <span class="bienvenido-texto">Bienvenido,</span>
+                    <span class="nombre-usuario-header" id="nombre-usuario-header">Cargando...</span>
+                </div>
+                <span class="rol-usuario-header" id="rol-usuario-header">....</span>
+                <span class="detalle-usuario-header" id="detalle-usuario-header"> ....</span>
+            </div>
+        </div>
+
+        <section class="tarjeta-principal">
+            <div class="header-tarjeta">
+                <h2>Información general vehículos</h2>
+            </div>
+            <div class="contenido-tarjeta">
+                <div class="resumen-estado">
+                    <div class="caja-estado">
+                        <span class="cantidad" id="total-vehiculos">...</span>
+                        <span class="etiqueta">Vehículos registrados en el año</span>
+                    </div>
+                    <div class="caja-estado">
+                        <span class="cantidad" id="vehiculos-ptc">...</span>
+                        <span class="etiqueta">Vehículos PTC</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tarjeta-principal">
+            <div class="header-tarjeta">
+                <h2>Personal del taller Mantenimiento Automotriz</h2>
+            </div>
+            <div class="contenido-tarjeta">
+                <div class="resumen-estado">
+                    <div class="caja-estado">
+                        <span class="cantidad" id="alumnos-registrados">...</span>
+                        <span class="etiqueta">Alumnos</span>
+                    </div>
+                    <div class="caja-estado">
+                        <span class="cantidad" id="maestros-registrados">...</span>
+                        <span class="etiqueta">Maestros</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tarjeta-principal">
+            <div class="header-tarjeta">
+                <h2>Módulos y Progreso</h2>
+                <div class="filtros-modulos">
+                    <button class="boton-filtro activo" data-year="todos" id="filtro-todos">Todos</button>
+                    <button class="boton-filtro" data-year="primer" id="filtro-primer">Primer Año</button>
+                    <button class="boton-filtro" data-year="segundo" id="filtro-segundo">Segundo Año</button>
+                    <button class="boton-filtro" data-year="tercero" id="filtro-tercero">Tercer Año</button>
+                </div>
+            </div>
+            <div class="contenido-tarjeta">
+                <div class="lista-modulos" id="lista-modulos">
+                    <!-- Los módulos se llenan dinámicamente con JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script type="module" src="js/coordi-index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema de Gestión Mantenimiento Automotriz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="imgs/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body">
+    <div class="contenedor-inicio-sesion">
+        <h1 class="titulo-pagina">Inicio de Sesión</h1>
+        <div class="cabecera-login">
+            <img src="imgs/logo rical.png" alt="Logo del Rical" class="logo">
+            <h2 class="nombre-sistema">Sistema de Gestión <br> Mantenimiento Automotriz</h2>
+            <p class="descripcion-formulario">Ingresa tus credenciales para acceder al sistema</p>
+        </div>
+
+        <div class="seccion-formulario">
+            <div class="grupo-campo">
+                <label for="username-input">Correo:</label>
+                <input type="text" id="username-input" placeholder="Ingresa tu correo institucional">
+            </div>
+            <div class="grupo-campo">
+                <label for="password-input">Contraseña:</label>
+                <div class="input-con-icono">
+                    <input type="password" id="password-input" placeholder="Ingresa tu contraseña">
+                    <span class="toggle-password" id="toggle-password"><i class="fas fa-eye"></i></span>
+                </div>
+            </div>
+            <a href="#" class="enlace-recuperar-contrasena">¿Olvidó la contraseña?</a>
+            <button id="login-btn" class="boton-base boton-principal">Iniciar Sesión</button>
+            <button id="vehicle-tracking-btn" class="boton-base boton-secundario">Seguimiento de Vehículo</button>
+            <!--<p class="texto-registro">
+                ¿No tienes cuenta? <a href="registro-user.html" class="enlace-registro">Crea una</a>
+            </p>-->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="js/controllers/login.js"></script>
+</html>

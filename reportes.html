@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="imgs/favicon/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/reportes.css">
+  <link rel="stylesheet" href="css/menu-hamburguesa.css">
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="imgs/logo.png" alt="Logo ITR">
+    </div>
+    <nav class="navegacion-sidebar">
+      <ul>
+        <li>
+          <a href="coordi-index.html" class="enlace-sidebar" title="Inicio">
+            <i class="fas fa-home"></i>
+            <span class="tooltip">Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="dashboard-vehiculos.html" class="enlace-sidebar" title="Vehículos">
+            <i class="fas fa-car"></i>
+            <span class="tooltip">Vehículos</span>
+          </a>
+        </li>
+        <li>
+          <a href="reportes.html" class="enlace-sidebar activo" title="Reportes">
+            <i class="fas fa-chart-bar"></i>
+            <span class="tooltip">Reportes</span>
+          </a>
+        </li>
+        <li class="dropdown-sidebar">
+          <a href="#" class="enlace-sidebar dropdown-toggle" title="Administración">
+            <i class="fas fa-cog"></i>
+            <span class="tooltip">Administración</span>
+          </a>
+          <div class="dropdown-content-sidebar">
+            <a href="admin-users.html"><i class="fas fa-users"></i> Gestionar Docentes</a>
+            <a href="admin-modules.html"><i class="fas fa-puzzle-piece"></i> Gestionar Módulos</a>
+            <a href="admin-students.html"><i class="fas fa-graduation-cap"></i> Gestionar Estudiantes</a>
+          </div>
+        </li>
+        <li>
+          <a href="perfil-coord.html" class="enlace-sidebar" title="Mi perfil">
+            <i class="fas fa-user"></i>
+            <span class="tooltip">Mi Perfil</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html" class="enlace-sidebar" title="Cerrar Sesión">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="tooltip">Cerrar Sesión</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="contenido-principal">
+    <div class="titulo-pagina">
+      <h1><i class="fas fa-chart-line"></i> Reportes y Estadísticas</h1>
+      <p>Análisis detallado del rendimiento y actividad del sistema</p>
+    </div>
+
+    <section class="estadisticas-resumen">
+      <div class="tarjeta-estadistica">
+        <div class="icono-estadistica">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="info-estadistica">
+          <h3>...</h3>
+          <p>Total Estudiantes</p>
+          <span class="cambio positivo">...% vs mes anterior</span>
+        </div>
+      </div>
+
+      <div class="tarjeta-estadistica">
+        <div class="icono-estadistica">
+          <i class="fas fa-car"></i>
+        </div>
+        <div class="info-estadistica">
+          <h3>...</h3>
+          <p>Vehículos Registrados</p>
+          <span class="cambio positivo">...% vs mes anterior</span>
+        </div>
+      </div>
+
+      <div class="tarjeta-estadistica">
+        <div class="icono-estadistica">
+          <i class="fas fa-tools"></i>
+        </div>
+        <div class="info-estadistica">
+          <h3>...</h3>
+          <p>Trabajos Completados</p>
+          <span class="cambio neutro">Sin cambios</span>
+        </div>
+      </div>
+
+      <div class="tarjeta-estadistica">
+        <div class="icono-estadistica">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="info-estadistica">
+          <h3>...</h3>
+          <p>En Proceso</p>
+          <span class="cambio negativo">...-% vs mes anterior</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contenedor-graficos">
+      <div class="tarjeta-grafico">
+        <div class="header-grafico">
+          <h2><i class="fas fa-graduation-cap"></i> Alumnos Registrados por Año</h2>
+          <div class="controles-grafico">
+            <button class="btn-exportar" title="Exportar datos">
+              <i class="fas fa-download"></i>
+            </button>
+            <button class="btn-actualizar" title="Actualizar datos">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+          </div>
+        </div>
+        <div class="contenido-grafico">
+          <div id="grafico-alumnos"></div>
+        </div>
+      </div>
+
+      <div class="tarjeta-grafico">
+        <div class="header-grafico">
+          <h2><i class="fas fa-chart-bar"></i> Vehículos por Tipo</h2>
+          <div class="controles-grafico">
+            <button class="btn-exportar" title="Exportar datos">
+              <i class="fas fa-download"></i>
+            </button>
+          </div>
+        </div>
+        <div class="contenido-grafico">
+          <div id="grafico-vehiculos-tipo"></div>
+        </div>
+      </div>
+
+      <div class="tarjeta-grafico">
+        <div class="header-grafico">
+          <h2><i class="fas fa-chalkboard-teacher"></i> Instructores por Año</h2>
+          <div class="controles-grafico">
+            <button class="btn-exportar" title="Exportar datos">
+              <i class="fas fa-download"></i>
+            </button>
+            <button class="btn-actualizar" title="Actualizar datos">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+          </div>
+        </div>
+        <div class="contenido-grafico">
+          <div id="grafico-instructores-level"></div>
+        </div>
+      </div>
+
+      <div class="tarjeta-grafico">
+        <div class="header-grafico">
+          <h2><i class="fas fa-user-tie"></i> Instructores por Rol</h2>
+          <div class="controles-grafico">
+            <button class="btn-exportar" title="Exportar datos">
+              <i class="fas fa-download"></i>
+            </button>
+          </div>
+        </div>
+        <div class="contenido-grafico">
+          <div id="grafico-instructores-rol"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reportes-adicionales">
+      <div class="tarjeta-reporte">
+        <div class="header-reporte">
+          <h3><i class="fas fa-file-alt"></i> Reportes Disponibles</h3>
+        </div>
+        <div class="lista-reportes">
+          <div class="item-reporte">
+            <div class="info-reporte">
+              <h4>Reporte Mensual de Actividad</h4>
+              <p>Resumen completo de todas las actividades del mes</p>
+              <span class="fecha-reporte">Generado: 01/08/2025</span>
+            </div>
+            <button class="btn-descargar">
+              <i class="fas fa-download"></i>
+              Descargar PDF
+            </button>
+          </div>
+
+          <div class="item-reporte">
+            <div class="info-reporte">
+              <h4>Estadísticas de Rendimiento</h4>
+              <p>Análisis de eficiencia y tiempos de trabajo</p>
+              <span class="fecha-reporte">Generado: 31/07/2025</span>
+            </div>
+            <button class="btn-descargar">
+              <i class="fas fa-download"></i>
+              Descargar PDF
+            </button>
+          </div>
+
+          <div class="item-reporte">
+            <div class="info-reporte">
+              <h4>Reporte de Vehículos por Año</h4>
+              <p>Distribución de vehículos según nivel académico</p>
+              <span class="fecha-reporte">Generado: 30/07/2025</span>
+            </div>
+            <button class="btn-descargar">
+              <i class="fas fa-download"></i>
+              Descargar PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+  <script type="module" src="js/reportes.js"></script>
+
+</body>
+
+</html>
